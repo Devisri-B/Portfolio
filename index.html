@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Devisri Bandaru — AI / ML Engineer</title>
+  <meta name="description" content="Portfolio of Devisri Bandaru — AI Engineer, Data Scientist, and ML Researcher at Kent State University." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Custom Cursor ── */
+    * { cursor: none !important; }
+    #cursor-dot {
+      width: 8px; height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      position: fixed; top: 0; left: 0;
+      pointer-events: none; z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: background .2s, transform .15s;
+      box-shadow: 0 0 8px 2px rgba(88,166,255,.7);
+    }
+    #cursor-ring {
+      width: 32px; height: 32px;
+      border: 1.5px solid rgba(88,166,255,.5);
+      border-radius: 50%;
+      position: fixed; top: 0; left: 0;
+      pointer-events: none; z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: width .2s, height .2s, border-color .2s, opacity .2s;
+    }
+    body.cursor-hover #cursor-dot {
+      transform: translate(-50%, -50%) scale(2);
+      background: var(--accent2);
+      box-shadow: 0 0 12px 4px rgba(63,185,80,.7);
+    }
+    body.cursor-hover #cursor-ring {
+      width: 48px; height: 48px;
+      border-color: rgba(63,185,80,.4);
+    }
+
+    /* ── Reset & Variables ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:        #0d1117;
+      --surface:   #161b22;
+      --border:    #30363d;
+      --accent:    #58a6ff;
+      --accent2:   #3fb950;
+      --accent3:   #d29922;
+      --text:      #e6edf3;
+      --muted:     #8b949e;
+      --radius:    10px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(13,17,23,.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 56px;
+    }
+    .nav-brand {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .9rem;
+      color: var(--accent);
+    }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a { color: var(--muted); font-size: .85rem; font-weight: 500; transition: color .2s; }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+    /* ── Layout ── */
+    .container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: 80px 0; }
+    .section-title {
+      font-size: 1.4rem; font-weight: 700;
+      margin-bottom: 2rem;
+      display: flex; align-items: center; gap: .6rem;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1; height: 1px;
+      background: var(--border);
+    }
+
+    /* ── Hero ── */
+    #hero {
+      padding: 100px 0 80px;
+      display: flex; align-items: center;
+    }
+    .hero-inner { display: flex; align-items: center; gap: 3rem; }
+    .hero-avatar {
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      border: 3px solid var(--accent);
+      object-fit: cover;
+      object-position: 50% 18%;
+      flex-shrink: 0;
+      background: var(--surface);
+      overflow: hidden;
+    }
+    .hero-avatar-placeholder {
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      border: 3px solid var(--accent);
+      flex-shrink: 0;
+      background: linear-gradient(135deg, #1f6feb 0%, #388bfd 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.8rem; font-weight: 700; color: #fff;
+      font-family: 'Inter', sans-serif;
+    }
+    .hero-text .greeting {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .85rem; color: var(--accent);
+      margin-bottom: .4rem;
+    }
+    .hero-text h1 { font-size: 2.4rem; font-weight: 700; line-height: 1.2; }
+    .hero-text .subtitle {
+      font-size: 1.05rem; color: var(--muted);
+      margin: .6rem 0 1.4rem;
+    }
+    .hero-text .subtitle span { color: var(--accent2); font-weight: 500; }
+    .hero-links { display: flex; flex-wrap: wrap; gap: .7rem; }
+    .btn {
+      display: inline-flex; align-items: center; gap: .4rem;
+      padding: .45rem 1rem;
+      border-radius: 6px;
+      font-size: .83rem; font-weight: 500;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      transition: border-color .2s, background .2s;
+      cursor: pointer;
+    }
+    .btn:hover { border-color: var(--accent); background: #1f2937; text-decoration: none; }
+    .btn-primary { background: var(--accent); color: #0d1117; border-color: var(--accent); }
+    .btn-primary:hover { background: #79c0ff; border-color: #79c0ff; }
+
+    /* ── About ── */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .about-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+    }
+    .about-card h3 { font-size: .95rem; color: var(--accent); margin-bottom: .8rem; }
+    .about-card p, .about-card li { color: var(--muted); font-size: .88rem; line-height: 1.7; }
+    .about-card ul { list-style: none; }
+    .about-card ul li::before { content: '▸ '; color: var(--accent2); }
+
+    /* ── Skills ── */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+    .skill-group {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.2rem;
+    }
+    .skill-group h4 {
+      font-size: .75rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: .06em;
+      color: var(--accent3); margin-bottom: .7rem;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .tag {
+      background: #1f2937;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: .2rem .55rem;
+      font-size: .75rem; color: var(--muted);
+    }
+
+    /* ── Experience ── */
+    .timeline { display: flex; flex-direction: column; gap: 0; }
+    .timeline-item {
+      display: flex; gap: 1.2rem;
+      padding-bottom: 1.8rem;
+      position: relative;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute; left: 7px; top: 22px; bottom: 0;
+      width: 1px; background: var(--border);
+    }
+    .timeline-item:last-child::before { display: none; }
+    .timeline-dot {
+      width: 15px; height: 15px; border-radius: 50%;
+      background: var(--accent); border: 2px solid var(--bg);
+      flex-shrink: 0; margin-top: 4px;
+    }
+    .timeline-content { flex: 1; }
+    .timeline-content .role { font-size: .95rem; font-weight: 600; }
+    .timeline-content .org {
+      font-size: .82rem; color: var(--accent);
+      margin-bottom: .2rem;
+    }
+    .timeline-content .period {
+      font-size: .75rem; color: var(--muted); margin-bottom: .5rem;
+    }
+    .timeline-content ul { list-style: none; padding: 0; }
+    .timeline-content ul li {
+      font-size: .82rem; color: var(--muted);
+      padding-left: 1rem; position: relative; margin-bottom: .3rem;
+      line-height: 1.5;
+    }
+    .timeline-content ul li::before {
+      content: '▸'; position: absolute; left: 0;
+      color: var(--accent2); font-size: .7rem; top: .1rem;
+    }
+
+    /* ── Projects ── */
+    .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      display: flex; flex-direction: column;
+      transition: border-color .2s, transform .2s;
+    }
+    .project-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .project-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: .6rem; }
+    .project-icon { font-size: 1.4rem; }
+    .project-links { display: flex; gap: .5rem; align-items: center; }
+    .project-links a { color: var(--muted); font-size: .8rem; transition: color .2s; display: inline-flex; align-items: center; }
+    .project-links a:hover { color: var(--accent); text-decoration: none; }
+    .project-links .demo-link {
+      background: var(--accent); color: #0d1117;
+      font-size: .72rem; font-weight: 600;
+      padding: .2rem .55rem; border-radius: 5px;
+      white-space: nowrap;
+    }
+    .project-links .demo-link:hover { background: #79c0ff; color: #0d1117; }
+    .project-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: .4rem; }
+    .project-desc { font-size: .83rem; color: var(--muted); flex: 1; margin-bottom: .8rem; line-height: 1.6; }
+    .live-badge {
+      display: inline-block;
+      background: #0d2a1a; border: 1px solid var(--accent2);
+      color: var(--accent2); font-size: .7rem; font-weight: 600;
+      border-radius: 12px; padding: .1rem .5rem;
+      margin-left: .5rem;
+    }
+    .wip-badge {
+      display: inline-block;
+      background: #2a1f0d; border: 1px solid var(--accent3);
+      color: var(--accent3); font-size: .7rem; font-weight: 600;
+      border-radius: 12px; padding: .1rem .5rem;
+      margin-left: .5rem;
+    }
+
+    /* ── Research ── */
+    .research-list { display: flex; flex-direction: column; gap: 1rem; }
+    .paper-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.4rem;
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .paper-year {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .8rem; color: var(--accent);
+      min-width: 44px; padding-top: .1rem;
+    }
+    .paper-info h4 { font-size: .92rem; font-weight: 600; margin-bottom: .3rem; }
+    .paper-info p { font-size: .8rem; color: var(--muted); }
+    .paper-info .cite-count {
+      display: inline-block; margin-top: .4rem;
+      background: #1f2937; border: 1px solid var(--border);
+      border-radius: 4px; padding: .1rem .5rem;
+      font-size: .72rem; color: var(--muted);
+    }
+
+    /* ── Blog ── */
+    .blog-featured {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem;
+      margin-bottom: 1.4rem;
+    }
+    .blog-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.4rem;
+      transition: border-color .2s, transform .2s;
+      display: flex; flex-direction: column;
+    }
+    .blog-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .blog-card.featured { border-color: rgba(88,166,255,.3); }
+    .blog-card .date { font-size: .75rem; color: var(--muted); margin-bottom: .4rem; }
+    .blog-card h4 { font-size: .88rem; font-weight: 600; line-height: 1.4; margin-bottom: .5rem; flex: 1; }
+    .blog-card h4 a { color: var(--text); }
+    .blog-card h4 a:hover { color: var(--accent); text-decoration: none; }
+    .blog-card .pub { font-size: .72rem; color: var(--accent); }
+    .blog-card .relevance-tag {
+      display: inline-block; margin-top: .5rem;
+      background: #0d2a1a; border: 1px solid var(--accent2);
+      color: var(--accent2); font-size: .68rem; font-weight: 600;
+      border-radius: 4px; padding: .15rem .5rem;
+    }
+    .blog-more {
+      display: flex; align-items: center; justify-content: space-between;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1rem 1.4rem;
+      margin-top: .5rem;
+    }
+    .blog-more p { font-size: .83rem; color: var(--muted); }
+    .blog-more-grid { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .6rem; }
+    .blog-more-item {
+      font-size: .78rem; color: var(--muted);
+      background: #1f2937; border: 1px solid var(--border);
+      border-radius: 4px; padding: .25rem .7rem;
+      transition: color .2s, border-color .2s;
+    }
+    .blog-more-item:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+    #blog-loading { color: var(--muted); font-size: .88rem; }
+
+
+    /* ── Certifications ── */
+    .certs-grid { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .cert-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.4rem;
+      display: flex; align-items: center; gap: .8rem;
+      transition: border-color .2s;
+      cursor: pointer;
+    }
+    .cert-card:hover { border-color: var(--accent); text-decoration: none; }
+    .cert-icon { font-size: 1.6rem; }
+    .cert-info .cert-name { font-size: .9rem; font-weight: 600; color: var(--text); }
+    .cert-info .cert-issuer { font-size: .77rem; color: var(--muted); }
+
+    /* ── Contact ── */
+    .contact-grid { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .contact-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: .9rem 1.4rem;
+      display: flex; align-items: center; gap: .7rem;
+      transition: border-color .2s;
+    }
+    .contact-item:hover { border-color: var(--accent); text-decoration: none; color: var(--text); }
+    .contact-item .icon { font-size: 1.2rem; }
+    .contact-item .label { font-size: .78rem; color: var(--muted); }
+    .contact-item .value { font-size: .88rem; font-weight: 500; }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 700px) {
+      .hero-inner { flex-direction: column; text-align: center; gap: 1.5rem; }
+      .hero-links { justify-content: center; }
+      .about-grid, .projects-grid, .blog-featured { grid-template-columns: 1fr; }
+      .hero-text h1 { font-size: 1.8rem; }
+      nav { padding: 0 1rem; }
+      .nav-links { gap: 1rem; }
+    }
+    @media (max-width: 900px) {
+      .blog-featured { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- ── Navigation ── -->
+<nav>
+  <span class="nav-brand">devisri.dev</span>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ── Hero ── -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <img class="hero-avatar" src="profile.jpeg" alt="Devisri Bandaru" />
+      <div class="hero-text">
+        <p class="greeting">// hello world 👋</p>
+        <h1>Devisri Bandaru</h1>
+        <p class="subtitle">
+          AI / ML Engineer · <span>M.S. Computer Science @ Kent State (GPA 3.97)</span>
+        </p>
+        <p style="color:var(--muted);font-size:.88rem;max-width:520px;margin-bottom:1.4rem;">
+          I design and ship production AI/ML systems — agentic RAG pipelines, LLM fine-tuning, and serverless model deployment with full MLOps. Published LLM researcher, grounded in strong data science, SQL, and statistical fundamentals.
+        </p>
+        <div class="hero-links">
+          <a class="btn btn-primary" href="https://github.com/Devisri-B" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            GitHub
+          </a>
+          <a class="btn" href="https://medium.com/@bandarudevisri.ds" target="_blank">✍️ Medium</a>
+          <a class="btn" href="https://scholar.google.com/citations?user=2hd7wnYAAAAJ&hl=en" target="_blank">🎓 Scholar</a>
+          <a class="btn" href="https://www.linkedin.com/in/devisri-bandaru/" target="_blank">💼 LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── About ── -->
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About</h2>
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>Background</h3>
+        <p>M.S. Computer Science, Kent State University, December 2025 (GPA 3.97/4.0). Currently working as an AI/ML Intern at Zoo Media and a Volunteer Data Science Research Assistant at Kent State, while contributing to open-source AI/ML projects at Nexus Spring of Code. Previously served as a Graduate Research Assistant at KSU where I published research, built production ML systems, and contributed to peer-reviewed publications. B.S. in Computer Science from JNTU Gurajada, India.</p>
+        <br/>
+        <p>My focus is building and deploying production AI/ML systems — from LLM pipelines and agentic AI to serverless model deployment with end-to-end MLOps. This is grounded in solid data science and analytics fundamentals: predictive modeling, statistical analysis, SQL, and BI dashboards. I'm also a published researcher and active technical writer on Medium &amp; Hashnode.</p>
+      </div>
+      <div class="about-card">
+        <h3>What I'm focused on</h3>
+        <ul>
+          <li>Agentic AI &amp; multi-step reasoning pipelines</li>
+          <li>RAG systems, LLM fine-tuning &amp; evaluation</li>
+          <li>MLOps: experiment tracking, deployment &amp; monitoring</li>
+          <li>Predictive modeling &amp; statistical analysis</li>
+          <li>Real-time data pipelines with Kafka &amp; Airflow</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Skills ── -->
+<section id="skills" style="padding-top:0">
+  <div class="container">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4>AI / LLMs</h4>
+        <div class="tags">
+          <span class="tag">LangChain</span><span class="tag">LangGraph</span>
+          <span class="tag">RAG</span><span class="tag">Agentic AI</span>
+          <span class="tag">BERT Fine-tuning</span><span class="tag">HuggingFace</span>
+          <span class="tag">NLP</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>ML / Deep Learning</h4>
+        <div class="tags">
+          <span class="tag">PyTorch</span><span class="tag">TensorFlow</span>
+          <span class="tag">Scikit-learn</span><span class="tag">MLflow</span>
+          <span class="tag">Computer Vision</span><span class="tag">RL</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Data & Vector DBs</h4>
+        <div class="tags">
+          <span class="tag">FAISS</span><span class="tag">Chroma</span>
+          <span class="tag">PostgreSQL</span><span class="tag">MongoDB</span>
+          <span class="tag">Supabase</span><span class="tag">Apache Kafka</span>
+          <span class="tag">Distributed Computing</span><span class="tag">SAP ERP</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Cloud & MLOps</h4>
+        <div class="tags">
+          <span class="tag">AWS SageMaker</span><span class="tag">Lambda</span>
+          <span class="tag">GCP Vertex AI</span><span class="tag">Docker</span>
+          <span class="tag">Kubernetes</span><span class="tag">Airflow</span>
+          <span class="tag">GitHub Actions</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Backend / APIs</h4>
+        <div class="tags">
+          <span class="tag">FastAPI</span><span class="tag">Flask</span>
+          <span class="tag">REST APIs</span><span class="tag">Python</span>
+          <span class="tag">SQL</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Data Analysis</h4>
+        <div class="tags">
+          <span class="tag">SQL</span><span class="tag">T-SQL</span>
+          <span class="tag">Pandas</span><span class="tag">NumPy</span>
+          <span class="tag">EDA</span><span class="tag">A/B Testing</span>
+          <span class="tag">Hypothesis Testing</span><span class="tag">Bayesian Inference</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Visualization & BI</h4>
+        <div class="tags">
+          <span class="tag">Power BI</span><span class="tag">Tableau</span>
+          <span class="tag">Streamlit</span><span class="tag">Plotly</span>
+          <span class="tag">React</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Experience ── -->
+<section id="experience" style="padding-top:0">
+  <div class="container">
+    <h2 class="section-title">Experience</h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="role">Contributor</div>
+          <div class="org">Nexus Spring of Code</div>
+          <div class="period">May 2026 – Present</div>
+          <ul>
+            <li>Contributing to open-source AI/ML projects, implementing and optimizing algorithms for community-driven research initiatives.</li>
+            <li>Collaborating on model development, documentation, and code reviews.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="role">AI Computer Programmer &amp; ML Intern (Part-time)</div>
+          <div class="org">Zoo Media</div>
+          <div class="period">Apr 2026 – Present</div>
+          <ul>
+            <li>Developed Python scripts to automate AI-assisted content processing tasks, streamlining media production workflows using ML-based classification.</li>
+            <li>Applied NLP and computer vision models for digital asset tagging and content organization.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="role">Data Science Research Assistant (Volunteer)</div>
+          <div class="org">Kent State University · Kent, OH</div>
+          <div class="period">Aug 2025 – Present</div>
+          <ul>
+            <li>Architected a RAG pipeline using FAISS and Sentence Transformers, reducing LLM hallucinations by 40% and improving curriculum generation reliability for 98 users.</li>
+            <li>Built a high-precision image search engine (CLIP/SigLIP) within Flask/React, implementing a Consensus Scoring Algorithm to dynamically optimize retrieval relevance.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot" style="background:var(--muted)"></div>
+        <div class="timeline-content">
+          <div class="role">Graduate Research Assistant</div>
+          <div class="org">Kent State University · Kent, OH</div>
+          <div class="period">Jan 2024 – Jul 2025</div>
+          <ul>
+            <li>Led the strategic migration of a 300GB+ database to GCP with zero downtime, using Docker and Bash scripting to configure cloud-native scalable environments, ensuring full data continuity and accessibility.</li>
+            <li>Designed a Reinforcement Learning agent using Active Inference to model reward mechanisms, successfully recreating translation state spaces that mimic professional translator cognitive behaviors.</li>
+            <li>Authored and published <em>tprdbreader</em> on PyPI, an open-source Python library that automated data ingestion workflows, delivering an 80% reduction in processing time for the broader research community.</li>
+            <li>Designed interactive Tableau dashboards for behavioral analytics, improving cross-functional research collaboration efficiency by 25% across three research teams.</li>
+            <li>Fine-tuned BERT models (HuggingFace Transformers) using statistical structuring techniques, achieving a 20% increase in classification accuracy (from 74% to 94% F1-score) to surface better insights from behavioral datasets.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Projects ── -->
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-grid">
+
+      <!-- Crisis Monitor -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">🗺️</span>
+          <div class="project-links">
+            <a href="https://real-time-geospatial-crisis-monitor.streamlit.app" target="_blank" class="demo-link" title="Live Demo">↗ Live Demo</a>
+            <a href="https://github.com/Devisri-B/Real-Time-Geospatial-Crisis-Monitor" target="_blank" title="GitHub">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            </a>
+          </div>
+        </div>
+        <h3>Real-Time Geospatial Crisis Monitor <span class="live-badge">● LIVE</span></h3>
+        <p class="project-desc">End-to-end intelligence platform detecting mental health crises via Reddit NLP. Auto-geolocates posts using spaCy NER, visualizes on an interactive Folium map, and dispatches email alerts for critical incidents. Automated ETL via GitHub Actions every 6 hours.</p>
+        <div class="tags">
+          <span class="tag">XGBoost</span><span class="tag">spaCy</span><span class="tag">Supabase</span>
+          <span class="tag">Streamlit</span><span class="tag">GitHub Actions</span><span class="tag">Geopy</span>
+        </div>
+      </div>
+
+      <!-- Recipe Assistant -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">🍳</span>
+          <div class="project-links">
+            <a href="https://meal-chatbot-devisri-b.streamlit.app" target="_blank" class="demo-link" title="Live Demo">↗ Live Demo</a>
+            <a href="https://github.com/Devisri-B/Conversational-Recipe-Assistant" target="_blank" title="GitHub">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            </a>
+          </div>
+        </div>
+        <h3>Conversational Recipe Assistant <span class="live-badge">● LIVE</span></h3>
+        <p class="project-desc">Streamlit chatbot searching 5,938 recipes with NLP-based intent recognition, score-based ingredient matching (85% fuzzy threshold), allergy/diet filtering, and Spoonacular API fallback. Session context accumulates user preferences across the conversation.</p>
+        <div class="tags">
+          <span class="tag">Streamlit</span><span class="tag">spaCy</span><span class="tag">pandas</span>
+          <span class="tag">Spoonacular API</span><span class="tag">NLP</span>
+        </div>
+      </div>
+
+      <!-- Financial Forecasting -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">📈</span>
+          <div class="project-links">
+            <a href="https://github.com/Devisri-B/Financial-forecasting-pipeline" target="_blank" title="GitHub">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            </a>
+          </div>
+        </div>
+        <h3>Financial Forecasting Pipeline</h3>
+        <p class="project-desc">Production-grade stock price forecasting achieving R²=0.9985 via LSTM + ARIMA ensemble. 88x performance improvement through multi-ticker data scaling (605→7,666 samples). Full MLflow tracking, DVC versioning, and AWS Lambda deployment at ~$0.35/month.</p>
+        <div class="tags">
+          <span class="tag">LSTM</span><span class="tag">ARIMA</span><span class="tag">MLflow</span>
+          <span class="tag">AWS Lambda</span><span class="tag">Docker</span><span class="tag">DVC</span>
+        </div>
+      </div>
+
+      <!-- Agentic RAG -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">🤖</span>
+          <div class="project-links">
+            <a href="https://github.com/Devisri-B/Agentic_RAG_Knowledge_Search" target="_blank" title="GitHub">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            </a>
+          </div>
+        </div>
+        <h3>Agentic RAG Knowledge Search</h3>
+        <p class="project-desc">Production AI microservice using an Agentic Router to intelligently choose between internal private document RAG and live DuckDuckGo web search. Self-evaluation via LLM-as-Judge pipeline that generates CSV performance reports. Full REST API with FastAPI/Swagger.</p>
+        <div class="tags">
+          <span class="tag">LangGraph</span><span class="tag">LangChain</span><span class="tag">FAISS</span>
+          <span class="tag">FastAPI</span><span class="tag">Gemini API</span><span class="tag">Docker</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Research ── -->
+<section id="research">
+  <div class="container">
+    <h2 class="section-title">Research</h2>
+    <p style="color:var(--muted);font-size:.85rem;margin-bottom:1.2rem;">
+      Published work in LLM architecture surveys and computational translation modeling.
+      <a href="https://scholar.google.com/citations?user=2hd7wnYAAAAJ&hl=en" target="_blank" style="margin-left:.4rem;">View Google Scholar ↗</a>
+    </p>
+    <div class="research-list">
+
+      <div class="paper-card">
+        <span class="paper-year">2026</span>
+        <div class="paper-info">
+          <h4>Mapping the LLM Landscape: A Cross-Family Survey of Architectures, Alignment Methods, and Benchmark Performance</h4>
+          <p>D. Bhati, F. Neha, <strong>D.S. Bandaru</strong>, M. Weber, I.D. Gajera · <em>AI (MDPI) 7(4), 142</em></p>
+          <span class="cite-count">📖 Cited 2+</span>
+        </div>
+      </div>
+
+      <div class="paper-card">
+        <span class="paper-year">2026</span>
+        <div class="paper-info">
+          <h4>Large Language Models: A Survey of Architectures, Training Paradigms, and Alignment Methods</h4>
+          <p>D. Bhati, F. Neha, <strong>D.S. Bandaru</strong>, M. Weber, I.D. Gajera · <em>Preprints</em></p>
+          <span class="cite-count">📖 Cited 2+</span>
+        </div>
+      </div>
+
+      <div class="paper-card">
+        <span class="paper-year">2026</span>
+        <div class="paper-info">
+          <h4>Assessing Pause Thresholds for Empirical Translation Process Research</h4>
+          <p><strong>D.S. Bandaru</strong>, M. Carl, X. Ren · <em>Translation in Transition 8 (TT8)</em></p>
+        </div>
+      </div>
+
+      <div class="paper-card">
+        <span class="paper-year">2025</span>
+        <div class="paper-info">
+          <h4>The Behavioural Translation Style Space: Towards Simulating the Temporal Dynamics of Affect, Behaviour, and Cognition in Human Translation Production</h4>
+          <p>M. Carl, T. Mizowaki, A. Ray, M. Yamada, <strong>D.S. Bandaru</strong>, X. Ren · <em>SKASE Journal of Translation and Interpretation</em></p>
+          <span class="cite-count">📖 Cited 2+</span>
+        </div>
+      </div>
+
+      <div class="paper-card">
+        <span class="paper-year">2025</span>
+        <div class="paper-info">
+          <h4>From Representation to Enactment: The ABC Framework of the Translating Mind</h4>
+          <p>M. Carl, T. Mizowaki, A. Raj, M. Yamada, <strong>D.S. Bandaru</strong>, Y. Wei, X. Ren · <em>arXiv preprint</em></p>
+        </div>
+      </div>
+
+      <div class="paper-card">
+        <span class="paper-year">2025</span>
+        <div class="paper-info">
+          <h4>Building and Evaluating an Active-Inference Model of the Translation Process</h4>
+          <p>T. Mizowaki, M. Yamada, M. Carl, Y. Wei, A. Ray, <strong>D.S. Bandaru</strong>, X. Ren · <em>JAITS (26th Conference)</em></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Blog ── -->
+<section id="blog">
+  <div class="container">
+    <h2 class="section-title">
+      Featured Writing
+      <a href="https://medium.com/@bandarudevisri.ds" target="_blank" style="font-size:.8rem;font-weight:400;color:var(--muted);margin-left:.5rem;">View all on Medium ↗</a>
+    </h2>
+    <p style="color:var(--muted);font-size:.85rem;margin-bottom:1.4rem;">
+      Hand-picked articles most relevant to data analysis, SQL, ML fundamentals, and applied AI.
+    </p>
+
+    <!-- Featured 3 -->
+    <div class="blog-featured">
+
+      <div class="blog-card featured">
+        <div class="date">2026 · Hashnode</div>
+        <h4><a href="https://devisri-b.hashnode.dev/a-practical-guide-to-t-sql" target="_blank" rel="noopener">A Practical Guide to T-SQL</a></h4>
+        <span class="pub">Hashnode</span>
+        <span class="relevance-tag">🗄️ SQL · Data Analysis</span>
+      </div>
+
+      <div class="blog-card featured">
+        <div class="date">Mar 13, 2026 · AI Plain English</div>
+        <h4><a href="https://ai.plainenglish.io/every-microsoft-pl-300-power-bi-data-analyst-associate-certification-trap-in-one-article-plus-the-4ea33451fa68" target="_blank" rel="noopener">Every Microsoft PL-300: Power BI Data Analyst Associate Certification Trap in One Article</a></h4>
+        <span class="pub">AI in Plain English</span>
+        <span class="relevance-tag">📊 Power BI · Data Analysis</span>
+      </div>
+
+      <div class="blog-card featured">
+        <div class="date">Feb 4, 2025 · Medium</div>
+        <h4><a href="https://medium.com/@bandarudevisri.ds/a-comprehensive-guide-to-linear-regression-and-core-machine-learning-concepts-90c648c81f35" target="_blank" rel="noopener">A Comprehensive Guide to Linear Regression and Core Machine Learning Concepts</a></h4>
+        <span class="pub">Medium</span>
+        <span class="relevance-tag">📈 ML Fundamentals</span>
+      </div>
+
+      <div class="blog-card featured">
+        <div class="date">Jan 9, 2026 · AI Plain English</div>
+        <h4><a href="https://ai.plainenglish.io/beyond-the-curve-a-holistic-guide-to-activation-functions-from-sigmoid-to-swiglu-3e96faaa7a84" target="_blank" rel="noopener">Beyond the Curve: A Holistic Guide to Activation Functions (From Sigmoid to SwiGLU)</a></h4>
+        <span class="pub">AI in Plain English</span>
+        <span class="relevance-tag">🧠 Deep Learning</span>
+      </div>
+
+    </div>
+
+    <!-- More articles -->
+    <div class="blog-more">
+      <div style="flex:1">
+        <p style="font-weight:600;color:var(--text);margin-bottom:.5rem;">More articles</p>
+        <div class="blog-more-grid">
+          <a class="blog-more-item" href="https://medium.com/codetodeploy/stop-paying-for-tokens-run-private-llms-on-your-laptop-with-docker-0b5e7ac55743" target="_blank" rel="noopener">Run Private LLMs with Docker</a>
+          <a class="blog-more-item" href="https://medium.com/@bandarudevisri.ds/a-beginners-guide-to-mastering-git-and-github-from-local-repos-to-cloud-collaboration-faf52821ba30" target="_blank" rel="noopener">Mastering Git &amp; GitHub</a>
+          <a class="blog-more-item" href="https://medium.com/ai-in-plain-english/transformers-architecture-attention-mechanisms-and-language-modeling-b982915d99b1" target="_blank" rel="noopener">Transformers Architecture</a>
+          <a class="blog-more-item" href="https://medium.com/ai-in-plain-english/understanding-scaled-dot-product-attention-in-transformers-8cd794ed8164" target="_blank" rel="noopener">Scaled Dot-Product Attention</a>
+          <a class="blog-more-item" href="https://medium.com/@bandarudevisri.ds/understanding-sequence-to-sequence-modeling-and-self-attention-25282d10a7ff" target="_blank" rel="noopener">Seq2Seq &amp; Self-Attention</a>
+          <a class="blog-more-item" href="https://medium.com/codetodeploy/my-journey-to-passing-the-github-foundations-exam-in-15-days-as-a-complete-beginner-0197dcc7227d" target="_blank" rel="noopener">GitHub Foundations in 15 Days</a>
+          <a class="blog-more-item" href="https://medium.com/codetodeploy/the-students-guide-to-sap-certification-how-to-get-it-for-free-and-pass-with-ai-d0bbdf78e26a" target="_blank" rel="noopener">SAP Certification for Free</a>
+          <a class="blog-more-item" href="https://medium.com/@bandarudevisri.ds" target="_blank" rel="noopener" style="color:var(--accent);border-color:rgba(88,166,255,.4);">→ All on Medium</a>
+          <a class="blog-more-item" href="https://devisri-b.hashnode.dev" target="_blank" rel="noopener" style="color:var(--accent);border-color:rgba(88,166,255,.4);">→ Hashnode Blog</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Certifications ── -->
+<section id="certifications">
+  <div class="container">
+    <h2 class="section-title">Certifications</h2>
+    <div class="certs-grid">
+
+      <a class="cert-card" href="https://www.credly.com/badges/27da48d3-3f50-4dd0-b606-c23f6c0f1203/public_url" target="_blank">
+        <span class="cert-icon">☁️</span>
+        <div class="cert-info">
+          <div class="cert-name">AWS Certified AI Practitioner</div>
+          <div class="cert-issuer">Amazon Web Services</div>
+        </div>
+      </a>
+
+      <div class="cert-card" style="cursor:default;">
+        <span class="cert-icon">☁️</span>
+        <div class="cert-info">
+          <div class="cert-name">AWS Machine Learning Associate</div>
+          <div class="cert-issuer">Amazon Web Services</div>
+        </div>
+      </div>
+
+      <a class="cert-card" href="https://learn.microsoft.com/en-us/users/devisribandaru-6070/credentials/d01f4e9683bffe22" target="_blank">
+        <span class="cert-icon">🟦</span>
+        <div class="cert-info">
+          <div class="cert-name">Power BI Data Analyst Associate</div>
+          <div class="cert-issuer">Microsoft · PL-300</div>
+        </div>
+      </a>
+
+      <a class="cert-card" href="https://www.linkedin.com/learning/certificates/1e21b037a0621d2ad1b6af7c67234411efebc1d1dc4164a934ca9c09eae794e5" target="_blank">
+        <span class="cert-icon">📊</span>
+        <div class="cert-info">
+          <div class="cert-name">Tableau Certified Data Analyst</div>
+          <div class="cert-issuer">Tableau · LinkedIn Learning</div>
+        </div>
+      </a>
+
+      <div class="cert-card" style="cursor:default;">
+        <span class="cert-icon">🧱</span>
+        <div class="cert-info">
+          <div class="cert-name">Databricks Generative AI</div>
+          <div class="cert-issuer">Databricks</div>
+        </div>
+      </div>
+
+      <a class="cert-card" href="https://drive.google.com/file/d/1J1WIEo1Taf4rgz3lKHIFgvyQ65rRx1_o/view" target="_blank">
+        <span class="cert-icon">🤗</span>
+        <div class="cert-info">
+          <div class="cert-name">HuggingFace Agents Course</div>
+          <div class="cert-issuer">Hugging Face</div>
+        </div>
+      </a>
+
+      <a class="cert-card" href="https://learn.microsoft.com/en-us/users/devisribandaru-6070/credentials/b54655915aa66c81" target="_blank">
+        <span class="cert-icon">🐙</span>
+        <div class="cert-info">
+          <div class="cert-name">GitHub Foundations</div>
+          <div class="cert-issuer">GitHub</div>
+        </div>
+      </a>
+
+      <a class="cert-card" href="https://drive.google.com/file/d/1teGW5yDU7TkHzeOPcMJsHeAOKzVCa_kb/view" target="_blank">
+        <span class="cert-icon">🔬</span>
+        <div class="cert-info">
+          <div class="cert-name">Google/Kaggle Generative AI Intensive</div>
+          <div class="cert-issuer">Google · Kaggle</div>
+        </div>
+      </a>
+
+      <a class="cert-card" href="https://www.kaggle.com/certification/badges/devisribandaru/105" target="_blank">
+        <span class="cert-icon">🤖</span>
+        <div class="cert-info">
+          <div class="cert-name">AI Agents Intensive</div>
+          <div class="cert-issuer">Google · Kaggle</div>
+        </div>
+      </a>
+
+      <a class="cert-card" href="https://verify.skilljar.com/c/wteu3zvve2iv" target="_blank">
+        <span class="cert-icon">🟣</span>
+        <div class="cert-info">
+          <div class="cert-name">MCP Certification</div>
+          <div class="cert-issuer">Anthropic</div>
+        </div>
+      </a>
+
+      <a class="cert-card" href="https://www.credly.com/badges/d817b5b7-36a9-4b26-82c5-f4ce5384fa9f/linked_in_profile" target="_blank">
+        <span class="cert-icon">🔷</span>
+        <div class="cert-info">
+          <div class="cert-name">SAP Certified Associate</div>
+          <div class="cert-issuer">Back-End Developer · ABAP Cloud</div>
+        </div>
+      </a>
+
+      <a class="cert-card" href="https://www.hackerrank.com/certificates/9cdfa36eb961" target="_blank">
+        <span class="cert-icon">🟩</span>
+        <div class="cert-info">
+          <div class="cert-name">SQL Advanced</div>
+          <div class="cert-issuer">HackerRank</div>
+        </div>
+      </a>
+
+      <a class="cert-card" href="https://drive.google.com/file/d/1mZtK52LlCSoq1ICzSqwtOc8LvL-gZVpb/view" target="_blank">
+        <span class="cert-icon">🤖</span>
+        <div class="cert-info">
+          <div class="cert-name">Reinforcement Learning</div>
+          <div class="cert-issuer">NSTC</div>
+        </div>
+      </a>
+
+      <a class="cert-card" href="https://drive.google.com/file/d/1OPNf4qZOvuxaX_gUhGct4-IiG8jKPwkv/view" target="_blank">
+        <span class="cert-icon">🌿</span>
+        <div class="cert-info">
+          <div class="cert-name">Deep Learning in Ecological Studies</div>
+          <div class="cert-issuer">ISRO</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ── -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact</h2>
+    <p style="color:var(--muted);font-size:.88rem;margin-bottom:1.2rem;">
+      Open to <strong>AI Engineer</strong>, <strong>ML Engineer</strong>, <strong>Data Scientist</strong>, and <strong>Data Analyst</strong> roles. Happy to connect!
+    </p>
+    <div class="contact-grid">
+      <a class="contact-item" href="mailto:bandarudevisri.ds@gmail.com">
+        <span class="icon">✉️</span>
+        <div>
+          <div class="label">Email</div>
+          <div class="value">bandarudevisri.ds@gmail.com</div>
+        </div>
+      </a>
+      <a class="contact-item" href="https://github.com/Devisri-B" target="_blank">
+        <span class="icon">
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="#8b949e"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        </span>
+        <div>
+          <div class="label">GitHub</div>
+          <div class="value">github.com/Devisri-B</div>
+        </div>
+      </a>
+      <a class="contact-item" href="https://medium.com/@bandarudevisri.ds" target="_blank">
+        <span class="icon">✍️</span>
+        <div>
+          <div class="label">Medium</div>
+          <div class="value">@bandarudevisri.ds</div>
+        </div>
+      </a>
+      <a class="contact-item" href="https://scholar.google.com/citations?user=2hd7wnYAAAAJ&hl=en" target="_blank">
+        <span class="icon">🎓</span>
+        <div>
+          <div class="label">Google Scholar</div>
+          <div class="value">Publications & Citations</div>
+        </div>
+      </a>
+      <a class="contact-item" href="https://www.linkedin.com/in/devisri-bandaru/" target="_blank">
+        <span class="icon">💼</span>
+        <div>
+          <div class="label">LinkedIn</div>
+          <div class="value">devisri-bandaru</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Built by Devisri Bandaru · 2026 · <a href="https://github.com/Devisri-B" target="_blank">GitHub</a></p>
+  </div>
+</footer>
+
+<!-- ── Custom Cursor ── -->
+<script>
+(function() {
+  const dot  = document.getElementById('cursor-dot');
+  const ring = document.getElementById('cursor-ring');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+
+  // Dot snaps instantly; ring lags behind for trail feel
+  function animate() {
+    dot.style.left  = mx + 'px';
+    dot.style.top   = my + 'px';
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.left = rx + 'px';
+    ring.style.top  = ry + 'px';
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  // Hover effect on interactive elements
+  const hoverEls = 'a, button, .btn, .project-card, .cert-card, .contact-item, .blog-card';
+  document.querySelectorAll(hoverEls).forEach(el => {
+    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+  });
+
+  // Hide when leaving window
+  document.addEventListener('mouseleave', () => { dot.style.opacity = '0'; ring.style.opacity = '0'; });
+  document.addEventListener('mouseenter', () => { dot.style.opacity = '1'; ring.style.opacity = '1'; });
+})();
+</script>
+
+<!-- ── Blog Auto-Fetch (Medium RSS via rss2json) ── -->
+<script>
+(async () => {
+  const container = document.getElementById('blog-container');
+  const loading   = document.getElementById('blog-loading');
+
+  try {
+    const RSS_URL  = 'https://medium.com/feed/@bandarudevisri.ds';
+    const API      = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}&count=5`;
+    const res      = await fetch(API);
+    const data     = await res.json();
+
+    if (data.status !== 'ok' || !data.items?.length) throw new Error('No items');
+
+    const grid = document.createElement('div');
+    grid.className = 'blog-grid';
+
+    data.items.forEach(item => {
+      const date = new Date(item.pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+      const pub  = item.categories?.[0] || 'Medium';
+      const card = document.createElement('div');
+      card.className = 'blog-card';
+      card.innerHTML = `
+        <div class="date">${date}</div>
+        <h4><a href="${item.link}" target="_blank" rel="noopener">${item.title}</a></h4>
+        <span class="pub">${pub}</span>
+      `;
+      grid.appendChild(card);
+    });
+
+    container.replaceChild(grid, loading);
+  } catch (e) {
+    /* Fallback to hardcoded latest 5 posts */
+    loading.textContent = '';
+    const POSTS = [
+      { title: "Every Microsoft PL-300: Power BI Data Analyst Associate Certification Trap in One Article", url: "https://ai.plainenglish.io/every-microsoft-pl-300-power-bi-data-analyst-associate-certification-trap-in-one-article-plus-the-4ea33451fa68", date: "Mar 13, 2026", pub: "AI Plain English" },
+      { title: "Stop Paying for Tokens: Run Private LLMs on Your Laptop with Docker", url: "https://medium.com/codetodeploy/stop-paying-for-tokens-run-private-llms-on-your-laptop-with-docker-0b5e7ac55743", date: "Mar 3, 2026", pub: "CodeToDeploy" },
+      { title: "Beyond the Curve: A Holistic Guide to Activation Functions (From Sigmoid to SwiGLU)", url: "https://ai.plainenglish.io/beyond-the-curve-a-holistic-guide-to-activation-functions-from-sigmoid-to-swiglu-3e96faaa7a84", date: "Jan 9, 2026", pub: "AI Plain English" },
+      { title: "The Student's Guide to SAP Certification: How to Get It for Free and Pass with AI", url: "https://medium.com/codetodeploy/the-students-guide-to-sap-certification-how-to-get-it-for-free-and-pass-with-ai-d0bbdf78e26a", date: "Nov 23, 2025", pub: "CodeToDeploy" },
+      { title: "My Journey to Passing the GitHub Foundations Exam in 15 Days (as a Complete Beginner)", url: "https://medium.com/codetodeploy/my-journey-to-passing-the-github-foundations-exam-in-15-days-as-a-complete-beginner-0197dcc7227d", date: "Aug 21, 2025", pub: "CodeToDeploy" },
+    ];
+
+    const grid = document.createElement('div');
+    grid.className = 'blog-grid';
+    POSTS.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'blog-card';
+      card.innerHTML = `
+        <div class="date">${p.date}</div>
+        <h4><a href="${p.url}" target="_blank" rel="noopener">${p.title}</a></h4>
+        <span class="pub">${p.pub}</span>
+      `;
+      grid.appendChild(card);
+    });
+    container.appendChild(grid);
+  }
+})();
+</script>
+
+</body>
+</html>
