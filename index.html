@@ -682,7 +682,7 @@
       <!-- MedSeg -->
        <div class="project-card">
         <div class="project-header">
-          <span class="project-icon">🍳</span>
+          <span class="project-icon">🩻</span>
           <div class="project-links">
             <a href="https://huggingface.co/spaces/Devisri515/medseg-rai" target="_blank" class="demo-link" title="Live Demo">↗ Live Demo</a>
             <a href="https://github.com/Devisri-B/EquiSeg-Explainable-Equitable-Medical-Segmentation-Pipeline" target="_blank" title="GitHub">
@@ -691,7 +691,7 @@
           </div>
         </div>
         <h3> MedSeg-RAI: Responsible Histopathology Segmentation <span class="live-badge">● LIVE</span></h3>
-        <p class="project-desc">Built a U-Net++/ResNet-50 segmentation model (PyTorch) classifying six nucleus and tissue types across 19 organ sites in H&E histopathology, reaching 0.92 pixel accuracy and 0.64 mean Dice on 2,700+ test images; diagnosed a rare necrotic class capping the score and more than doubled its Dice (0.15 to 0.36) by switching to a Focal-Tversky loss with clipped class weights.Engineered a responsible-AI layer for regulated medical AI: a subgroup fairness audit flagging Dice disparities (0.56 worst-to-best ratio, failing the four-fifths rule), Seg-Grad-CAM and per-pixel uncertainty for explainability, and PSI drift monitoring, documented in a Model Card, Datasheet, and IEEE/FDA GMLP-aligned ethics assessment; deployed as a public Hugging Face Space (Gradio, CPU) with a quantification module producing clinical-style readouts (cell counts, area fractions, tissue-degradation index).
+        <p class="project-desc">A PyTorch U-Net++/ResNet-50 model to segment 6 nucleus/tissue types across 19 organ sites, achieving 0.92 pixel accuracy and 0.64 mean Dice on 2,700+ images. Performance on a bottleneck rare necrotic class was doubled (0.15 to 0.36 Dice) using a Focal-Tversky loss with clipped weights. To ensure clinical safety, an IEEE/FDA GMLP-aligned Responsible AI layer was engineered, integrating subgroup fairness audits (flagging a 0.56 disparity ratio), Seg-Grad-CAM, PSI drift tracking, and rigorous Model Card documentation. The system is deployed via Hugging Face (Gradio) with an automated quantification module generating clinical readouts like cell counts and tissue-degradation indices.
 </p>
         <div class="tags">
           <span class="tag">PyTorch</span><span class="tag">HuggingFace Gradio</span><span class="tag">ResNet-50</span><span class="tag">U-Net++</span><span class="tag">Segmentation</span><span class="tag">Governance</span><span class="tag">Fairness</span>
