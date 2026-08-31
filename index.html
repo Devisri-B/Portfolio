@@ -223,43 +223,124 @@
     }
 
     /* ── Projects ── */
+    .project-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-bottom: 1.5rem;
+    }
+    .filter-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .8rem;
+      font-weight: 500;
+      padding: .35rem .85rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all .2s;
+      font-family: inherit;
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+    }
+    .filter-btn:hover {
+      border-color: var(--accent);
+      color: var(--text);
+      background: #1f2937;
+    }
+    .filter-btn.active {
+      background: rgba(88,166,255,.15);
+      border-color: var(--accent);
+      color: var(--accent);
+      font-weight: 600;
+    }
     .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
     .project-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 1.4rem;
+      padding: 1.35rem;
       display: flex; flex-direction: column;
-      transition: border-color .2s, transform .2s;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
     }
-    .project-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-    .project-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: .6rem; }
-    .project-icon { font-size: 1.4rem; }
-    .project-links { display: flex; gap: .5rem; align-items: center; }
-    .project-links a { color: var(--muted); font-size: .8rem; transition: color .2s; display: inline-flex; align-items: center; }
+    .project-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,.25);
+    }
+    .project-card.is-hidden { display: none !important; }
+    .project-header { display: flex; align-items: flex-start; justify-content: space-between; gap: .8rem; margin-bottom: .6rem; }
+    .project-icon { font-size: 1.35rem; line-height: 1; }
+    .project-links { display: flex; gap: .45rem; align-items: center; }
+    .project-links a {
+      color: var(--muted);
+      font-size: .78rem;
+      transition: color .2s, background .2s, border-color .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+    }
     .project-links a:hover { color: var(--accent); text-decoration: none; }
+    .project-links .icon-link {
+      border: 1px solid var(--border);
+      background: #1f2937;
+      padding: .25rem .5rem;
+      border-radius: 5px;
+    }
+    .project-links .icon-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
     .project-links .demo-link {
       background: var(--accent); color: #0d1117;
       font-size: .72rem; font-weight: 600;
-      padding: .2rem .55rem; border-radius: 5px;
+      padding: .22rem .6rem; border-radius: 5px;
       white-space: nowrap;
     }
     .project-links .demo-link:hover { background: #79c0ff; color: #0d1117; }
-    .project-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: .4rem; }
-    .project-desc { font-size: .83rem; color: var(--muted); flex: 1; margin-bottom: .8rem; line-height: 1.6; }
+    .project-links .tableau-link {
+      background: #2563eb; color: #ffffff;
+      font-size: .72rem; font-weight: 600;
+      padding: .22rem .6rem; border-radius: 5px;
+      white-space: nowrap;
+    }
+    .project-links .tableau-link:hover { background: #3b82f6; color: #ffffff; }
+    .project-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: .45rem;
+      line-height: 1.35;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: .4rem;
+    }
+    .project-desc { font-size: .83rem; color: var(--muted); flex: 1; margin-bottom: .85rem; line-height: 1.6; }
+    .project-desc strong { color: var(--text); font-weight: 600; }
     .live-badge {
-      display: inline-block;
+      display: inline-flex; align-items: center; gap: .25rem;
       background: #0d2a1a; border: 1px solid var(--accent2);
-      color: var(--accent2); font-size: .7rem; font-weight: 600;
+      color: var(--accent2); font-size: .68rem; font-weight: 600;
       border-radius: 12px; padding: .1rem .5rem;
-      margin-left: .5rem;
+    }
+    .tableau-badge {
+      display: inline-flex; align-items: center; gap: .25rem;
+      background: rgba(56,139,253,.15); border: 1px solid var(--accent);
+      color: var(--accent); font-size: .68rem; font-weight: 600;
+      border-radius: 12px; padding: .1rem .5rem;
+    }
+    .aws-badge {
+      display: inline-flex; align-items: center; gap: .25rem;
+      background: rgba(210,153,34,.15); border: 1px solid var(--accent3);
+      color: var(--accent3); font-size: .68rem; font-weight: 600;
+      border-radius: 12px; padding: .1rem .5rem;
     }
     .wip-badge {
       display: inline-block;
       background: #2a1f0d; border: 1px solid var(--accent3);
       color: var(--accent3); font-size: .7rem; font-weight: 600;
       border-radius: 12px; padding: .1rem .5rem;
-      margin-left: .5rem;
     }
 
     /* ── Research ── */
@@ -464,7 +545,7 @@
         <h4>AI / LLMs</h4>
         <div class="tags">
           <span class="tag">LangChain</span><span class="tag">LangGraph</span>
-          <span class="tag">RAG</span><span class="tag">Agentic AI</span>
+          <span class="tag">RAG / Self-RAG</span><span class="tag">Agentic AI</span>
           <span class="tag">BERT Fine-tuning</span><span class="tag">HuggingFace</span>
           <span class="tag">NLP</span>
         </div>
@@ -473,51 +554,53 @@
         <h4>ML / Deep Learning</h4>
         <div class="tags">
           <span class="tag">PyTorch</span><span class="tag">TensorFlow</span>
-          <span class="tag">Scikit-learn</span><span class="tag">MLflow</span>
-          <span class="tag">Computer Vision</span><span class="tag">RL</span>
+          <span class="tag">Scikit-learn</span><span class="tag">LightGBM</span>
+          <span class="tag">XGBoost</span><span class="tag">SHAP</span>
+          <span class="tag">MLflow</span><span class="tag">RL</span>
         </div>
       </div>
       <div class="skill-group">
         <h4>Data & Vector DBs</h4>
         <div class="tags">
-          <span class="tag">FAISS</span><span class="tag">Chroma</span>
-          <span class="tag">PostgreSQL</span><span class="tag">MongoDB</span>
-          <span class="tag">Supabase</span><span class="tag">Apache Kafka</span>
-          <span class="tag">Distributed Computing</span><span class="tag">SAP ERP</span>
+          <span class="tag">PostgreSQL (pgvector)</span><span class="tag">FAISS</span>
+          <span class="tag">Chroma</span><span class="tag">Supabase</span>
+          <span class="tag">MongoDB</span><span class="tag">Apache Kafka</span>
+          <span class="tag">Distributed Computing</span>
         </div>
       </div>
       <div class="skill-group">
         <h4>Cloud & MLOps</h4>
         <div class="tags">
-          <span class="tag">AWS SageMaker</span><span class="tag">Lambda</span>
+          <span class="tag">AWS SageMaker</span><span class="tag">AWS Lambda</span>
           <span class="tag">GCP Vertex AI</span><span class="tag">Docker</span>
           <span class="tag">Kubernetes</span><span class="tag">Airflow</span>
-          <span class="tag">GitHub Actions</span>
+          <span class="tag">GitHub Actions</span><span class="tag">DVC</span>
         </div>
       </div>
       <div class="skill-group">
         <h4>Backend / APIs</h4>
         <div class="tags">
           <span class="tag">FastAPI</span><span class="tag">Flask</span>
+          <span class="tag">SQLAlchemy 2.0</span><span class="tag">Alembic</span>
           <span class="tag">REST APIs</span><span class="tag">Python</span>
-          <span class="tag">SQL</span>
+          <span class="tag">TypeScript</span>
         </div>
       </div>
       <div class="skill-group">
-        <h4>Data Analysis</h4>
+        <h4>Data Analysis & Statistics</h4>
         <div class="tags">
           <span class="tag">SQL</span><span class="tag">T-SQL</span>
           <span class="tag">Pandas</span><span class="tag">NumPy</span>
           <span class="tag">EDA</span><span class="tag">A/B Testing</span>
-          <span class="tag">Hypothesis Testing</span><span class="tag">Bayesian Inference</span>
+          <span class="tag">Hypothesis Testing</span><span class="tag">WOE / IV</span>
         </div>
       </div>
       <div class="skill-group">
         <h4>Visualization & BI</h4>
         <div class="tags">
-          <span class="tag">Power BI</span><span class="tag">Tableau</span>
+          <span class="tag">Tableau</span><span class="tag">Power BI</span>
           <span class="tag">Streamlit</span><span class="tag">Plotly</span>
-          <span class="tag">React</span>
+          <span class="tag">React 18</span>
         </div>
       </div>
     </div>
@@ -559,7 +642,7 @@
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
-          <div class="role">Applied AI Researcher(Volunteer)</div>
+          <div class="role">Data Science Research Assistant (Volunteer)</div>
           <div class="org">Kent State University · Kent, OH</div>
           <div class="period">Aug 2025 – Present</div>
           <ul>
@@ -592,111 +675,175 @@
 <!-- ── Projects ── -->
 <section id="projects">
   <div class="container">
-    <h2 class="section-title">Projects</h2>
+    <h2 class="section-title">Featured Projects</h2>
+
+    <!-- Category Filter Controls -->
+    <div class="project-filters">
+      <button class="filter-btn active" data-filter="all">All Projects (8)</button>
+      <button class="filter-btn" data-filter="genai">🤖 GenAI &amp; Agents (4)</button>
+      <button class="filter-btn" data-filter="ml">⚡ ML &amp; Computer Vision (6)</button>
+      <button class="filter-btn" data-filter="analytics">📊 Data Analytics &amp; BI (3)</button>
+    </div>
+
     <div class="projects-grid">
 
-      <!-- Crisis Monitor -->
-      <div class="project-card">
+      <!-- 1. Multi-Tenant SaaS Platform with AI Assistant -->
+      <div class="project-card" data-cat="genai">
         <div class="project-header">
-          <span class="project-icon">🗺️</span>
+          <span class="project-icon">🏢</span>
           <div class="project-links">
-            <a href="https://real-time-geospatial-crisis-monitor.streamlit.app" target="_blank" class="demo-link" title="Live Demo">↗ Live Demo</a>
-            <a href="https://github.com/Devisri-B/Real-Time-Geospatial-Crisis-Monitor" target="_blank" title="GitHub">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            <a href="https://multi-tenant-saas-platform-with-an-ai.onrender.com" target="_blank" class="demo-link" title="Live Demo">↗ Live Demo</a>
+            <a href="https://github.com/Devisri-B/Multi-Tenant-SaaS-Platform-with-an-AI-Product-Assistant" target="_blank" class="icon-link" title="GitHub">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
             </a>
           </div>
         </div>
-        <h3>Real-Time Geospatial Crisis Monitor <span class="live-badge">● LIVE</span></h3>
-        <p class="project-desc">End-to-end intelligence platform detecting mental health crises via Reddit NLP. Auto-geolocates posts using spaCy NER, visualizes on an interactive Folium map, and dispatches email alerts for critical incidents. Automated ETL via GitHub Actions every 6 hours.</p>
+        <h3>Multi-Tenant SaaS Platform with Adaptive AI <span class="live-badge">● LIVE</span></h3>
+        <p class="project-desc">Production-grade SaaS foundation serving isolated customer workspaces with tenant-isolated documentation RAG. Features an adaptive <strong>LangGraph</strong> assistant with <strong>Self-RAG</strong> hallucination evaluators, dynamic web fallback, and strict RBAC authorization. Verified with <strong>135 automated unit tests</strong>.</p>
         <div class="tags">
-          <span class="tag">XGBoost</span><span class="tag">spaCy</span><span class="tag">Supabase</span>
-          <span class="tag">Streamlit</span><span class="tag">GitHub Actions</span><span class="tag">Geopy</span>
+          <span class="tag">FastAPI</span><span class="tag">LangGraph</span><span class="tag">pgvector</span>
+          <span class="tag">React 18</span><span class="tag">TypeScript</span><span class="tag">SQLAlchemy 2.0</span>
+          <span class="tag">Docker</span><span class="tag">GitHub Actions</span>
         </div>
       </div>
 
-      <!-- Agentic RAG -->
-      <div class="project-card">
+      <!-- 2. Olist E-Commerce Intelligence & GenAI Platform -->
+      <div class="project-card" data-cat="ml genai analytics">
+        <div class="project-header">
+          <span class="project-icon">🛍️</span>
+          <div class="project-links">
+            <a href="https://olist-ecommerce-intelligence.streamlit.app" target="_blank" class="demo-link" title="Live Demo">↗ Live Demo</a>
+            <a href="https://github.com/Devisri-B/Olist-Ecommerce-Intelligence" target="_blank" class="icon-link" title="GitHub">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            </a>
+          </div>
+        </div>
+        <h3>Olist E-Commerce Intelligence &amp; GenAI <span class="live-badge">● LIVE</span></h3>
+        <p class="project-desc">End-to-end intelligence engine on <strong>100K+ real orders</strong>. Deploys an imbalanced <strong>LightGBM</strong> model with SHAP explainability predicting satisfaction risk (uncovering a <strong>5.9× risk factor</strong> for delayed deliveries), RFM segmentation, Portuguese NLP review sentiment, and semantic search RAG.</p>
+        <div class="tags">
+          <span class="tag">LightGBM</span><span class="tag">FastAPI</span><span class="tag">Streamlit</span>
+          <span class="tag">Docker</span><span class="tag">MLflow</span><span class="tag">Sentence-Transformers</span>
+          <span class="tag">Scikit-learn</span><span class="tag">SHAP</span>
+        </div>
+      </div>
+
+      <!-- 3. Credit Risk Scoring Model -->
+      <div class="project-card" data-cat="ml analytics">
+        <div class="project-header">
+          <span class="project-icon">💳</span>
+          <div class="project-links">
+            <a href="https://public.tableau.com/app/profile/devi.sri.b/viz/CreditRiskAnalysis_17822342909330/Dashboard4" target="_blank" class="tableau-link" title="Tableau Dashboard">📊 Tableau</a>
+            <a href="https://github.com/Devisri-B/Credit-Risk-Scoring-Model" target="_blank" class="icon-link" title="GitHub">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            </a>
+          </div>
+        </div>
+        <h3>Credit Risk Scoring Model — Predictive Analytics <span class="tableau-badge">📊 TABLEAU</span></h3>
+        <p class="project-desc">Probability-of-default scoring pipeline on <strong>50,000+ real Lending Club loans</strong>. Engineered a stacked ensemble (<strong>XGBoost + Logistic Regression</strong>) calibrated into regulatory 300–850 credit scorecards with WOE/IV selection, PSI stability tracking, and an interactive 5-dashboard Tableau suite.</p>
+        <div class="tags">
+          <span class="tag">XGBoost</span><span class="tag">Scikit-learn</span><span class="tag">SQL</span>
+          <span class="tag">Tableau</span><span class="tag">MLflow</span><span class="tag">WOE / IV</span>
+          <span class="tag">Scorecard Scaling</span>
+        </div>
+      </div>
+
+      <!-- 4. MedSeg-RAI: Responsible Histopathology Segmentation -->
+      <div class="project-card" data-cat="ml vision">
+        <div class="project-header">
+          <span class="project-icon">🩻</span>
+          <div class="project-links">
+            <a href="https://huggingface.co/spaces/Devisri515/medseg-rai" target="_blank" class="demo-link" title="Live Demo">↗ Live Demo</a>
+            <a href="https://github.com/Devisri-B/EquiSeg-Explainable-Equitable-Medical-Segmentation-Pipeline" target="_blank" class="icon-link" title="GitHub">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            </a>
+          </div>
+        </div>
+        <h3>MedSeg-RAI: Responsible Histopathology Segmentation <span class="live-badge">● LIVE</span></h3>
+        <p class="project-desc">PyTorch <strong>U-Net++ / ResNet-50</strong> model segmenting 6 nucleus/tissue types across 19 organ sites (<strong>0.92 pixel accuracy</strong>, 0.64 mean Dice). Integrates an IEEE/FDA GMLP Responsible AI layer with fairness audits, <strong>Seg-Grad-CAM</strong>, and automated clinical readouts on Hugging Face.</p>
+        <div class="tags">
+          <span class="tag">PyTorch</span><span class="tag">ResNet-50</span><span class="tag">U-Net++</span>
+          <span class="tag">Gradio</span><span class="tag">Responsible AI</span><span class="tag">Seg-Grad-CAM</span>
+          <span class="tag">Computer Vision</span>
+        </div>
+      </div>
+
+      <!-- 5. Agentic RAG Knowledge Search -->
+      <div class="project-card" data-cat="genai">
         <div class="project-header">
           <span class="project-icon">🤖</span>
           <div class="project-links">
             <a href="https://huggingface.co/spaces/Devisri515/Agentic_RAG_Knowledge_Search" target="_blank" class="demo-link" title="Live Demo">↗ Live Demo</a>
-            <a href="https://github.com/Devisri-B/Agentic_RAG_Knowledge_Search" target="_blank" title="GitHub">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            <a href="https://github.com/Devisri-B/Agentic_RAG_Knowledge_Search" target="_blank" class="icon-link" title="GitHub">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
             </a>
           </div>
         </div>
         <h3>Agentic RAG Knowledge Search <span class="live-badge">● LIVE</span></h3>
-        <p class="project-desc">
-          Agentic RAG assistant built with LangGraph, FastAPI, and Google Gemini. A ReAct agent
-          autonomously routes each query between FAISS semantic search over user-uploaded documents
-          (PDF, DOCX, TXT, CSV, MD) and live DuckDuckGo web search. Includes conversation memory
-          with rolling summarization, per-answer hallucination detection via NLI entailment
-          (DeBERTa), answer relevance scoring, and a Bring-Your-Own-Key model so the public demo
-          never consumes the owner's API quota. Deployed as a Docker Space on HuggingFace with a
-          Gradio UI, pytest suite, and GitHub Actions CI.
-        </p>
+        <p class="project-desc">Autonomous <strong>LangGraph ReAct</strong> assistant that dynamically routes queries between <strong>FAISS</strong> semantic vector search across multi-format documents (PDF, DOCX, CSV) and live web search. Includes rolling conversation summarization and <strong>DeBERTa NLI</strong> hallucination verification.</p>
         <div class="tags">
-          <span class="tag">LangGraph</span><span class="tag">Gradio</span><span class="tag">FAISS</span>
-          <span class="tag">FastAPI</span><span class="tag">Gemini API</span><span class="tag">Docker</span><span class="tag">Conversation memory</span>
-          <span class="tag">pytest</span>
+          <span class="tag">LangGraph</span><span class="tag">FAISS</span><span class="tag">FastAPI</span>
+          <span class="tag">Gemini API</span><span class="tag">DeBERTa NLI</span><span class="tag">Docker</span>
+          <span class="tag">Gradio</span><span class="tag">pytest</span>
         </div>
       </div>
 
-      <!-- Recipe Assistant -->
-      <div class="project-card">
+      <!-- 6. Real-Time Geospatial Crisis Monitor -->
+      <div class="project-card" data-cat="ml analytics">
         <div class="project-header">
-          <span class="project-icon">🍳</span>
+          <span class="project-icon">🗺️</span>
           <div class="project-links">
-            <a href="https://meal-chatbot-devisri-b.streamlit.app" target="_blank" class="demo-link" title="Live Demo">↗ Live Demo</a>
-            <a href="https://github.com/Devisri-B/Conversational-Recipe-Assistant" target="_blank" title="GitHub">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            <a href="https://real-time-geospatial-crisis-monitor.streamlit.app" target="_blank" class="demo-link" title="Live Demo">↗ Live Demo</a>
+            <a href="https://github.com/Devisri-B/Real-Time-Geospatial-Crisis-Monitor" target="_blank" class="icon-link" title="GitHub">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
             </a>
           </div>
         </div>
-        <h3>Conversational Recipe Assistant <span class="live-badge">● LIVE</span></h3>
-        <p class="project-desc">Streamlit chatbot searching 5,938 recipes with NLP-based intent recognition, score-based ingredient matching (85% fuzzy threshold), allergy/diet filtering, and Spoonacular API fallback. Session context accumulates user preferences across the conversation.</p>
+        <h3>Real-Time Geospatial Crisis Monitor <span class="live-badge">● LIVE</span></h3>
+        <p class="project-desc">Real-time intelligence platform detecting mental health crisis patterns across social feeds. Auto-geolocates incident signals via <strong>spaCy NER</strong>, renders interactive <strong>Folium</strong> heatmaps, and dispatches automated incident alerts via scheduled <strong>GitHub Actions</strong> ETL pipelines.</p>
         <div class="tags">
-          <span class="tag">Streamlit</span><span class="tag">spaCy</span><span class="tag">pandas</span>
-          <span class="tag">Spoonacular API</span><span class="tag">NLP</span>
+          <span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">spaCy NER</span>
+          <span class="tag">Supabase</span><span class="tag">Streamlit</span><span class="tag">Folium</span>
+          <span class="tag">GitHub Actions</span>
         </div>
       </div>
 
-      <!-- Financial Forecasting -->
-      <div class="project-card">
+      <!-- 7. Financial Forecasting Pipeline -->
+      <div class="project-card" data-cat="ml">
         <div class="project-header">
           <span class="project-icon">📈</span>
           <div class="project-links">
-            <a href="https://github.com/Devisri-B/Financial-forecasting-pipeline" target="_blank" title="GitHub">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            <a href="https://github.com/Devisri-B/Financial-forecasting-pipeline" target="_blank" class="icon-link" title="GitHub">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
             </a>
           </div>
         </div>
-        <h3>Financial Forecasting Pipeline</h3>
-        <p class="project-desc">Production-grade stock price forecasting achieving R²=0.9985 via LSTM + ARIMA ensemble. 88x performance improvement through multi-ticker data scaling (605→7,666 samples). Full MLflow tracking, DVC versioning, and AWS Lambda deployment at ~$0.35/month.</p>
+        <h3>Financial Forecasting Pipeline <span class="aws-badge">☁️ AWS</span></h3>
+        <p class="project-desc">Production stock price forecasting achieving <strong>R²=0.9985</strong> through a hybrid <strong>LSTM + ARIMA</strong> ensemble. Scaled data by 88× across multi-ticker streams, implemented full <strong>MLflow/DVC</strong> tracking, and deployed serverless inference on <strong>AWS Lambda</strong> at ~$0.35/month.</p>
         <div class="tags">
           <span class="tag">LSTM</span><span class="tag">ARIMA</span><span class="tag">MLflow</span>
           <span class="tag">AWS Lambda</span><span class="tag">Docker</span><span class="tag">DVC</span>
         </div>
       </div>
-      
-      <!-- MedSeg -->
-       <div class="project-card">
+
+      <!-- 8. Conversational Recipe Assistant -->
+      <div class="project-card" data-cat="genai">
         <div class="project-header">
-          <span class="project-icon">🩻</span>
+          <span class="project-icon">🍳</span>
           <div class="project-links">
-            <a href="https://huggingface.co/spaces/Devisri515/medseg-rai" target="_blank" class="demo-link" title="Live Demo">↗ Live Demo</a>
-            <a href="https://github.com/Devisri-B/EquiSeg-Explainable-Equitable-Medical-Segmentation-Pipeline" target="_blank" title="GitHub">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            <a href="https://meal-chatbot-devisri-b.streamlit.app" target="_blank" class="demo-link" title="Live Demo">↗ Live Demo</a>
+            <a href="https://github.com/Devisri-B/Conversational-Recipe-Assistant" target="_blank" class="icon-link" title="GitHub">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
             </a>
           </div>
         </div>
-        <h3> MedSeg-RAI: Responsible Histopathology Segmentation <span class="live-badge">● LIVE</span></h3>
-        <p class="project-desc">A PyTorch U-Net++/ResNet-50 model to segment 6 nucleus/tissue types across 19 organ sites, achieving 0.92 pixel accuracy and 0.64 mean Dice on 2,700+ images. Performance on a bottleneck rare necrotic class was doubled (0.15 to 0.36 Dice) using a Focal-Tversky loss with clipped weights. To ensure clinical safety, an IEEE/FDA GMLP-aligned Responsible AI layer was engineered, integrating subgroup fairness audits (flagging a 0.56 disparity ratio), Seg-Grad-CAM, PSI drift tracking, and rigorous Model Card documentation. The system is deployed via Hugging Face (Gradio) with an automated quantification module generating clinical readouts like cell counts and tissue-degradation indices.
-</p>
+        <h3>Conversational Recipe Assistant <span class="live-badge">● LIVE</span></h3>
+        <p class="project-desc">Interactive AI culinary assistant indexing <strong>5,900+ recipes</strong> with fuzzy score-based ingredient matching (85% similarity threshold), dietary/allergen filtering, and external <strong>Spoonacular API</strong> fallback with multi-turn session context.</p>
         <div class="tags">
-          <span class="tag">PyTorch</span><span class="tag">HuggingFace Gradio</span><span class="tag">ResNet-50</span><span class="tag">U-Net++</span><span class="tag">Segmentation</span><span class="tag">Governance</span><span class="tag">Fairness</span>
+          <span class="tag">Streamlit</span><span class="tag">spaCy</span><span class="tag">pandas</span>
+          <span class="tag">Spoonacular API</span><span class="tag">NLP</span><span class="tag">Fuzzy Match</span>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -711,7 +858,7 @@
     </p>
     <div class="research-list">
 
-    <div class="paper-card">
+      <div class="paper-card">
         <span class="paper-year">2026</span>
         <div class="paper-info">
           <h4>Retrieval-Augmented AI Feedback to Support Metacognition and Accessible Feedback in STEM Education</h4>
@@ -1051,7 +1198,7 @@
   animate();
 
   // Hover effect on interactive elements
-  const hoverEls = 'a, button, .btn, .project-card, .cert-card, .contact-item, .blog-card';
+  const hoverEls = 'a, button, .btn, .filter-btn, .project-card, .cert-card, .contact-item, .blog-card';
   document.querySelectorAll(hoverEls).forEach(el => {
     el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
     el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
@@ -1060,6 +1207,32 @@
   // Hide when leaving window
   document.addEventListener('mouseleave', () => { dot.style.opacity = '0'; ring.style.opacity = '0'; });
   document.addEventListener('mouseenter', () => { dot.style.opacity = '1'; ring.style.opacity = '1'; });
+})();
+</script>
+
+<!-- ── Project Category Filter ── -->
+<script>
+(function() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card[data-cat]');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+
+      projectCards.forEach(card => {
+        const cats = card.getAttribute('data-cat') || '';
+        if (filter === 'all' || cats.includes(filter)) {
+          card.classList.remove('is-hidden');
+        } else {
+          card.classList.add('is-hidden');
+        }
+      });
+    });
+  });
 })();
 </script>
 
