@@ -679,153 +679,188 @@
 
     <!-- Category Filter Controls -->
     <div class="project-filters">
-      <button class="filter-btn active" data-filter="all">All Projects (8)</button>
+      <button class="filter-btn active" data-filter="all">All Projects (10)</button>
       <button class="filter-btn" data-filter="genai">🤖 GenAI &amp; Agents (4)</button>
       <button class="filter-btn" data-filter="ml">⚡ ML &amp; Computer Vision (6)</button>
       <button class="filter-btn" data-filter="analytics">📊 Data Analytics &amp; BI (3)</button>
     </div>
 
-    <div class="projects-grid">
+<div class="projects-grid">
 
-      <!-- 1. Multi-Tenant SaaS Platform with AI Assistant -->
-      <div class="project-card" data-cat="genai">
-        <div class="project-header">
-          <span class="project-icon">🏢</span>
-          <div class="project-links">
-            <a href="https://multi-tenant-saas-platform-with-an-ai.onrender.com" target="_blank" class="demo-link" title="Live Demo">↗ Live Demo</a>
-            <a href="https://github.com/Devisri-B/Multi-Tenant-SaaS-Platform-with-an-AI-Product-Assistant" target="_blank" class="icon-link" title="GitHub">
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-            </a>
-          </div>
-        </div>
-        <h3>Multi-Tenant SaaS Platform with Adaptive AI <span class="live-badge">● LIVE</span></h3>
-        <p class="project-desc">Production-grade SaaS foundation serving isolated customer workspaces with tenant-isolated documentation RAG. Features an adaptive <strong>LangGraph</strong> assistant with <strong>Self-RAG</strong> hallucination evaluators, dynamic web fallback, and strict RBAC authorization. Verified with <strong>135 automated unit tests</strong>.</p>
-        <div class="tags">
-          <span class="tag">FastAPI</span><span class="tag">LangGraph</span><span class="tag">pgvector</span>
-          <span class="tag">React 18</span><span class="tag">TypeScript</span><span class="tag">SQLAlchemy 2.0</span>
-          <span class="tag">Docker</span><span class="tag">GitHub Actions</span>
-        </div>
+  <!-- 1. Multi-Tenant SaaS Platform with AI Assistant -->
+  <div class="project-card" data-cat="genai">
+    <div class="project-header">
+      <span class="project-icon">🏢</span>
+      <div class="project-links">
+        <a href="https://multi-tenant-saas-platform-with-an-ai.onrender.com" target="_blank" class="demo-link" title="Live Demo">↗ Live Demo</a>
+        <a href="https://github.com/Devisri-B/Multi-Tenant-SaaS-Platform-with-an-AI-Product-Assistant" target="_blank" class="icon-link" title="GitHub">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        </a>
       </div>
+    </div>
+    <h3>Multi-Tenant SaaS Platform with Adaptive AI <span class="live-badge">● LIVE</span></h3>
+    <p class="project-desc">Enterprise SaaS backend featuring strict <strong>PostgreSQL RLS</strong> data isolation and an adaptive <strong>LangGraph Self-RAG</strong> agent with built-in <strong>FastMCP</strong> server support for Claude and Cursor. Cuts hallucinations by <strong>~85%</strong> using local DeBERTa-v3 NLI cross-encoders, backed by <strong>160+ automated tests</strong>.</p>
+    <div class="tags">
+      <span class="tag">FastAPI</span><span class="tag">LangGraph</span><span class="tag">FastMCP</span>
+      <span class="tag">pgvector</span><span class="tag">React 18</span><span class="tag">TypeScript</span>
+      <span class="tag">Docker</span><span class="tag">LangSmith</span>
+    </div>
+  </div>
 
-      <!-- 2. Olist E-Commerce Intelligence & GenAI Platform -->
-      <div class="project-card" data-cat="ml genai analytics">
-        <div class="project-header">
-          <span class="project-icon">🛍️</span>
-          <div class="project-links">
-            <a href="https://olist-ecommerce-intelligence.streamlit.app" target="_blank" class="demo-link" title="Live Demo">↗ Live Demo</a>
-            <a href="https://github.com/Devisri-B/Olist-Ecommerce-Intelligence" target="_blank" class="icon-link" title="GitHub">
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-            </a>
-          </div>
-        </div>
-        <h3>Olist E-Commerce Intelligence &amp; GenAI <span class="live-badge">● LIVE</span></h3>
-        <p class="project-desc">End-to-end intelligence engine on <strong>100K+ real orders</strong>. Deploys an imbalanced <strong>LightGBM</strong> model with SHAP explainability predicting satisfaction risk (uncovering a <strong>5.9× risk factor</strong> for delayed deliveries), RFM segmentation, Portuguese NLP review sentiment, and semantic search RAG.</p>
-        <div class="tags">
-          <span class="tag">LightGBM</span><span class="tag">FastAPI</span><span class="tag">Streamlit</span>
-          <span class="tag">Docker</span><span class="tag">MLflow</span><span class="tag">Sentence-Transformers</span>
-          <span class="tag">Scikit-learn</span><span class="tag">SHAP</span>
-        </div>
+  <!-- 2. Reasoning & Alignment Post-Training Engine (DeepAlign-RL) -->
+  <div class="project-card" data-cat="genai ml">
+    <div class="project-header">
+      <span class="project-icon">🔬</span>
+      <div class="project-links">
+        <a href="https://deepalign.streamlit.app" target="_blank" class="demo-link" title="Live Demo">↗ Live Demo</a>
+        <a href="https://github.com/Devisri-B/DeepAlign-RL" target="_blank" class="icon-link" title="GitHub">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        </a>
       </div>
+    </div>
+    <h3>DeepAlign-RL: Critic-Free GRPO &amp; DPO Engine <span class="live-badge">● LIVE</span></h3>
+    <p class="project-desc">Scalable post-training alignment engine implementing <strong>DeepSeek-style GRPO</strong> and <strong>DPO</strong> from scratch in PyTorch. Slashes peak training VRAM by <strong>~50%</strong> by eliminating the critic model and integrates a zero-noise <strong>SymPy AST verifier</strong> achieving <strong>74.8% GSM8K / 49.3% MATH accuracy</strong>.</p>
+    <div class="tags">
+      <span class="tag">PyTorch</span><span class="tag">GRPO</span><span class="tag">DPO</span>
+      <span class="tag">Reinforcement Learning</span><span class="tag">SymPy</span><span class="tag">LoRA/PEFT</span>
+      <span class="tag">Streamlit</span>
+    </div>
+  </div>
 
-      <!-- 3. Credit Risk Scoring Model -->
-      <div class="project-card" data-cat="ml analytics">
-        <div class="project-header">
-          <span class="project-icon">💳</span>
-          <div class="project-links">
-            <a href="https://public.tableau.com/app/profile/devi.sri.b/viz/CreditRiskAnalysis_17822342909330/Dashboard4" target="_blank" class="tableau-link" title="Tableau Dashboard">📊 Tableau</a>
-            <a href="https://github.com/Devisri-B/Credit-Risk-Scoring-Model" target="_blank" class="icon-link" title="GitHub">
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-            </a>
-          </div>
-        </div>
-        <h3>Credit Risk Scoring Model — Predictive Analytics <span class="tableau-badge">📊 TABLEAU</span></h3>
-        <p class="project-desc">Probability-of-default scoring pipeline on <strong>50,000+ real Lending Club loans</strong>. Engineered a stacked ensemble (<strong>XGBoost + Logistic Regression</strong>) calibrated into regulatory 300–850 credit scorecards with WOE/IV selection, PSI stability tracking, and an interactive 5-dashboard Tableau suite.</p>
-        <div class="tags">
-          <span class="tag">XGBoost</span><span class="tag">Scikit-learn</span><span class="tag">SQL</span>
-          <span class="tag">Tableau</span><span class="tag">MLflow</span><span class="tag">WOE / IV</span>
-          <span class="tag">Scorecard Scaling</span>
-        </div>
+  <!-- 3. FlowMatch-Compress (Diffusion Transformers) -->
+  <div class="project-card" data-cat="genai ml">
+    <div class="project-header">
+      <span class="project-icon">⚡</span>
+      <div class="project-links">
+        <a href="https://flowmatch-compress.streamlit.app" target="_blank" class="demo-link" title="Live Demo">↗ Live Demo</a>
+        <a href="https://github.com/Devisri-B/FlowMatch-Compress" target="_blank" class="icon-link" title="GitHub">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        </a>
       </div>
+    </div>
+    <h3>FlowMatch-Compress: Fast DiT Engine <span class="live-badge">● LIVE</span></h3>
+    <p class="project-desc">High-throughput <strong>Diffusion Transformer (DiT)</strong> engine built from scratch in PyTorch using Optimal Transport CFM. Accelerates inference by <strong>22× (down to ~18ms)</strong> and reduces memory by <strong>56%</strong> via 4-step trajectory distillation and an <strong>FP8/INT8/INT4 quantization suite</strong>.</p>
+    <div class="tags">
+      <span class="tag">PyTorch</span><span class="tag">Flow Matching</span><span class="tag">DiT</span>
+      <span class="tag">Model Distillation</span><span class="tag">Quantization (FP8/INT4)</span>
+      <span class="tag">Computer Vision</span><span class="tag">Streamlit</span>
+    </div>
+  </div>
 
-      <!-- 4. MedSeg-RAI: Responsible Histopathology Segmentation -->
-      <div class="project-card" data-cat="ml vision">
-        <div class="project-header">
-          <span class="project-icon">🩻</span>
-          <div class="project-links">
-            <a href="https://huggingface.co/spaces/Devisri515/medseg-rai" target="_blank" class="demo-link" title="Live Demo">↗ Live Demo</a>
-            <a href="https://github.com/Devisri-B/EquiSeg-Explainable-Equitable-Medical-Segmentation-Pipeline" target="_blank" class="icon-link" title="GitHub">
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-            </a>
-          </div>
-        </div>
-        <h3>MedSeg-RAI: Responsible Histopathology Segmentation <span class="live-badge">● LIVE</span></h3>
-        <p class="project-desc">PyTorch <strong>U-Net++ / ResNet-50</strong> model segmenting 6 nucleus/tissue types across 19 organ sites (<strong>0.92 pixel accuracy</strong>, 0.64 mean Dice). Integrates an IEEE/FDA GMLP Responsible AI layer with fairness audits, <strong>Seg-Grad-CAM</strong>, and automated clinical readouts on Hugging Face.</p>
-        <div class="tags">
-          <span class="tag">PyTorch</span><span class="tag">ResNet-50</span><span class="tag">U-Net++</span>
-          <span class="tag">Gradio</span><span class="tag">Responsible AI</span><span class="tag">Seg-Grad-CAM</span>
-          <span class="tag">Computer Vision</span>
-        </div>
+  <!-- 4. MedSeg-RAI Medical Segmentation -->
+  <div class="project-card" data-cat="ml">
+    <div class="project-header">
+      <span class="project-icon">🩺</span>
+      <div class="project-links">
+        <a href="https://huggingface.co/spaces/Devisri515/medseg-rai" target="_blank" class="demo-link" title="Live Demo">↗ Live Demo</a>
+        <a href="https://github.com/Devisri-B/MedSeg-Explainable-Equitable-Medical-Segmentation-Pipeline" target="_blank" class="icon-link" title="GitHub">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        </a>
       </div>
+    </div>
+    <h3>MedSeg-RAI: Responsible Medical Segmentation <span class="live-badge">● LIVE</span></h3>
+    <p class="project-desc">Clinical histopathology segmentation pipeline (<strong>U-Net++ / ResNet-50</strong>) on the PanNuke pan-cancer benchmark achieving <strong>0.92 pixel accuracy</strong>. Features <strong>Seg-Grad-CAM</strong> visual explainability, subgroup fairness audits, and drift tracking aligned with <strong>FDA Good Machine Learning Practice (GMLP)</strong>.</p>
+    <div class="tags">
+      <span class="tag">PyTorch</span><span class="tag">U-Net++</span><span class="tag">Grad-CAM</span>
+      <span class="tag">Computer Vision</span><span class="tag">Responsible AI</span>
+      <span class="tag">Hugging Face</span><span class="tag">Gradio</span>
+    </div>
+  </div>
 
-      <!-- 5. Agentic RAG Knowledge Search -->
-      <div class="project-card" data-cat="genai">
-        <div class="project-header">
-          <span class="project-icon">🤖</span>
-          <div class="project-links">
-            <a href="https://huggingface.co/spaces/Devisri515/Agentic_RAG_Knowledge_Search" target="_blank" class="demo-link" title="Live Demo">↗ Live Demo</a>
-            <a href="https://github.com/Devisri-B/Agentic_RAG_Knowledge_Search" target="_blank" class="icon-link" title="GitHub">
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-            </a>
-          </div>
-        </div>
-        <h3>Agentic RAG Knowledge Search <span class="live-badge">● LIVE</span></h3>
-        <p class="project-desc">Autonomous <strong>LangGraph ReAct</strong> assistant that dynamically routes queries between <strong>FAISS</strong> semantic vector search across multi-format documents (PDF, DOCX, CSV) and live web search. Includes rolling conversation summarization and <strong>DeBERTa NLI</strong> hallucination verification.</p>
-        <div class="tags">
-          <span class="tag">LangGraph</span><span class="tag">FAISS</span><span class="tag">FastAPI</span>
-          <span class="tag">Gemini API</span><span class="tag">DeBERTa NLI</span><span class="tag">Docker</span>
-          <span class="tag">Gradio</span><span class="tag">pytest</span>
-        </div>
+  <!-- 5. Olist E-Commerce Intelligence & Causal Decision Platform -->
+  <div class="project-card" data-cat="ml genai analytics">
+    <div class="project-header">
+      <span class="project-icon">🛍️</span>
+      <div class="project-links">
+        <a href="https://olist-ecommerce-intelligence.streamlit.app" target="_blank" class="demo-link" title="Live Demo">↗ Live Demo</a>
+        <a href="https://github.com/Devisri-B/Olist-Ecommerce-Intelligence" target="_blank" class="icon-link" title="GitHub">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        </a>
       </div>
+    </div>
+    <h3>Olist E-Commerce Intelligence &amp; Causal ML <span class="live-badge">● LIVE</span></h3>
+    <p class="project-desc">Causal decision engine evaluated across <strong>100K+ real orders (R$15.4M GMV)</strong>. Combines <strong>CUPED variance reduction</strong> (compressing A/B test duration by <strong>30–50%</strong>), <strong>X-Learner uplift modeling</strong> for campaign targeting, and <strong>LightGBM</strong> churn forecasting with SHAP explainability.</p>
+    <div class="tags">
+      <span class="tag">Causal ML</span><span class="tag">CUPED</span><span class="tag">LightGBM</span>
+      <span class="tag">FastAPI</span><span class="tag">Streamlit</span><span class="tag">Docker</span>
+      <span class="tag">SHAP</span><span class="tag">A/B Testing</span>
+    </div>
+  </div>
 
-      <!-- 6. Real-Time Geospatial Crisis Monitor -->
-      <div class="project-card" data-cat="ml analytics">
-        <div class="project-header">
-          <span class="project-icon">🗺️</span>
-          <div class="project-links">
-            <a href="https://real-time-geospatial-crisis-monitor.streamlit.app" target="_blank" class="demo-link" title="Live Demo">↗ Live Demo</a>
-            <a href="https://github.com/Devisri-B/Real-Time-Geospatial-Crisis-Monitor" target="_blank" class="icon-link" title="GitHub">
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-            </a>
-          </div>
-        </div>
-        <h3>Real-Time Geospatial Crisis Monitor <span class="live-badge">● LIVE</span></h3>
-        <p class="project-desc">Real-time intelligence platform detecting mental health crisis patterns across social feeds. Auto-geolocates incident signals via <strong>spaCy NER</strong>, renders interactive <strong>Folium</strong> heatmaps, and dispatches automated incident alerts via scheduled <strong>GitHub Actions</strong> ETL pipelines.</p>
-        <div class="tags">
-          <span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">spaCy NER</span>
-          <span class="tag">Supabase</span><span class="tag">Streamlit</span><span class="tag">Folium</span>
-          <span class="tag">GitHub Actions</span>
-        </div>
+  <!-- 6. Serverless Volatility Forecasting Pipeline -->
+  <div class="project-card" data-cat="ml">
+    <div class="project-header">
+      <span class="project-icon">📈</span>
+      <div class="project-links">
+        <a href="https://github.com/Devisri-B/Financial-forecasting-pipeline" target="_blank" class="icon-link" title="GitHub">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        </a>
       </div>
+    </div>
+    <h3>Serverless Volatility Forecasting Pipeline</h3>
+    <p class="project-desc">Quantitative trading pipeline featuring an <strong>Attention-LSTM + Ridge/ARIMA</strong> stacked ensemble over 10,000+ ETF sequences, hitting <strong>~75% directional accuracy</strong>. Deployed as a serverless <strong>ONNX API on AWS Lambda (<100ms latency at ~$0.35/month)</strong> with MLflow experiment tracking.</p>
+    <div class="tags">
+      <span class="tag">PyTorch</span><span class="tag">Attention-LSTM</span><span class="tag">AWS Lambda</span>
+      <span class="tag">ONNX Runtime</span><span class="tag">MLflow</span><span class="tag">Time-Series</span>
+    </div>
+  </div>
 
-      <!-- 7. Financial Forecasting Pipeline -->
-      <div class="project-card" data-cat="ml">
-        <div class="project-header">
-          <span class="project-icon">📈</span>
-          <div class="project-links">
-            <a href="https://github.com/Devisri-B/Financial-forecasting-pipeline" target="_blank" class="icon-link" title="GitHub">
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-            </a>
-          </div>
-        </div>
-        <h3>Financial Forecasting Pipeline <span class="aws-badge">☁️ AWS</span></h3>
-        <p class="project-desc">Production stock price forecasting achieving <strong>R²=0.9985</strong> through a hybrid <strong>LSTM + ARIMA</strong> ensemble. Scaled data by 88× across multi-ticker streams, implemented full <strong>MLflow/DVC</strong> tracking, and deployed serverless inference on <strong>AWS Lambda</strong> at ~$0.35/month.</p>
-        <div class="tags">
-          <span class="tag">LSTM</span><span class="tag">ARIMA</span><span class="tag">MLflow</span>
-          <span class="tag">AWS Lambda</span><span class="tag">Docker</span><span class="tag">DVC</span>
-        </div>
+  <!-- 7. CrisisGuard Real-Time Geospatial Monitor -->
+  <div class="project-card" data-cat="ml analytics">
+    <div class="project-header">
+      <span class="project-icon">🛰️</span>
+      <div class="project-links">
+        <a href="https://real-time-geospatial-crisis-monitor.streamlit.app" target="_blank" class="demo-link" title="Live Demo">↗ Live Demo</a>
+        <a href="https://github.com/Devisri-B/Real-Time-Geospatial-Crisis-Monitor" target="_blank" class="icon-link" title="GitHub">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        </a>
       </div>
+    </div>
+    <h3>CrisisGuard: Geospatial Crisis Monitor <span class="live-badge">● LIVE</span></h3>
+    <p class="project-desc">Real-time situational awareness engine clustering <strong>75,000+ incident reports</strong> to isolate emergency hotspots. Powered by automated 6-hour ETL ingestion, optimized <strong>PostgreSQL</strong> indexing for sub-second queries, and a <strong>spaCy NLP pipeline</strong> geocoding 60% of implicit event locations.</p>
+    <div class="tags">
+      <span class="tag">PostgreSQL</span><span class="tag">XGBoost</span><span class="tag">spaCy</span>
+      <span class="tag">ETL Pipelines</span><span class="tag">GitHub Actions</span><span class="tag">Streamlit</span>
+    </div>
+  </div>
 
-      <!-- 8. Conversational Recipe Assistant -->
+  <!-- 8. Credit Risk Scoring & BI -->
+  <div class="project-card" data-cat="analytics ml">
+    <div class="project-header">
+      <span class="project-icon">💳</span>
+      <div class="project-links">
+        <a href="https://public.tableau.com/app/profile/devi.sri.b/viz/CreditRiskAnalysis_17822342909330/Dashboard4" target="_blank" class="demo-link" title="Tableau Dashboard">↗ Tableau</a>
+        <a href="https://github.com/Devisri-B/Credit-Risk-Scoring-Model" target="_blank" class="icon-link" title="GitHub">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        </a>
+      </div>
+    </div>
+    <h3>Credit Risk Scoring &amp; Decision Analytics <span class="live-badge">● LIVE</span></h3>
+    <p class="project-desc">Quantitative risk modeling pipeline analyzing <strong>50,000+ loan records</strong> to isolate default patterns. Combines stacked <strong>XGBoost and Logistic Regression</strong> validated with KS-statistic diagnostics, paired with executive <strong>Tableau dashboards</strong> driving underwriting decisions.</p>
+    <div class="tags">
+      <span class="tag">XGBoost</span><span class="tag">Scikit-learn</span><span class="tag">SQL</span>
+      <span class="tag">Tableau</span><span class="tag">Credit Risk</span><span class="tag">EDA</span>
+    </div>
+  </div>
+
+  <!-- 9. Open-Source Python Data Tooling -->
+  <div class="project-card" data-cat="tools analytics">
+    <div class="project-header">
+      <span class="project-icon">📦</span>
+      <div class="project-links">
+        <a href="https://pypi.org/project/wranglefy/" target="_blank" class="demo-link" title="PyPI: wranglefy">↗ wranglefy</a>
+        <a href="https://pypi.org/project/tprdbreader/" target="_blank" class="demo-link" title="PyPI: tprdbreader">↗ tprdbreader</a>
+      </div>
+    </div>
+    <h3>Open-Source Python Tooling: wranglefy &amp; tprdbreader <span class="live-badge">● PyPI</span></h3>
+    <p class="project-desc">Production Python libraries published on PyPI. <strong>`wranglefy`</strong> automates multi-format ingestion, schema inference, and PII masking, while <strong>`tprdbreader`</strong> provides a high-throughput parser that <strong>slashed experimental dataset processing overhead by 80%</strong>.</p>
+    <div class="tags">
+      <span class="tag">Python</span><span class="tag">PyPI</span><span class="tag">Pandas</span>
+      <span class="tag">PyArrow</span><span class="tag">Data Engineering</span><span class="tag">Open Source</span>
+    </div>
+  </div>
+
+      <!-- 10. Conversational Recipe Assistant -->
       <div class="project-card" data-cat="genai">
         <div class="project-header">
           <span class="project-icon">🍳</span>
